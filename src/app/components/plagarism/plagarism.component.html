@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Check Plagarism
+  </h1>
+  <hr class="colorgraph">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Student Index 1</th>
+      <th scope="col">Student Index 2</th>
+      <th scope="col">Assignment No</th>
+      <th scope="col">Match</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let i of plagrism; let t = index">
+      <td>{{t+1}}</td>
+      <td>{{i.student_id1}}</td>
+      <td>{{i.student_id2}}</td>
+      <td>{{i.assignment_no}}</td>
+      <td>{{i.match_precentage}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -3,26 +3,37 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
-
 import {UserService} from './services/user.service';
-// import {AuthenticationGuard} from './services/authentication.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NguiAutoCompleteModule} from '@ngui/auto-complete';
 import {HttpModule} from '@angular/http';
 
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AssignmentPostComponent } from './components/assignment-post/assignment-post.component';
-import { AdminLoginComponent } from './components/admin-login/admin-login.component';
-
+import { AddAssignmentComponent } from './components/add-assignment/add-assignment.component';
+import { HomeComponent } from './components/home/home.component';
+import { ViewUsersComponent } from './components/view-users/view-users.component';
+import { PlagarismComponent } from './components/plagarism/plagarism.component';
+import { ViewAssignmentComponent } from './components/view-assignment/view-assignment.component';
+import { HomePageOfAllComponent } from './components/home-page-of-all/home-page-of-all.component';
+import { ViewInputsComponent } from './components/view-inputs/view-inputs.component';
 
 const appRoutes: Routes = [
-  {path: '', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'add_assignment', component: AssignmentPostComponent},
-  {path: 'admin', component: AdminLoginComponent},
-  {path: 'student', component: AdminLoginComponent }
-  ];
+  {path: '', component: HomePageOfAllComponent, children: [
+    {path: 'register', component: RegisterComponent},
+    {path: 'add_assignment', component: AddAssignmentComponent},
+    {path: 'view_assignment', component: ViewAssignmentComponent},
+    {path: 'view_users', component: ViewUsersComponent},
+    {path: 'view_input', component: ViewInputsComponent},
+    {path: 'plagrism', component: PlagarismComponent}
+  ]},
+  {path: 'login', component: LoginComponent}
+  // {path: 'login', component: LoginformComponent},
+  // {path: 'login/:username', component: LoginformComponent},
+  // {path: '**', component: NotfoundComponent}
+];
+
+
 
 
 @NgModule({
@@ -30,8 +41,13 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    AssignmentPostComponent,
-    AdminLoginComponent,
+    AddAssignmentComponent,
+    HomeComponent,
+    ViewUsersComponent,
+    PlagarismComponent,
+    ViewAssignmentComponent,
+    HomePageOfAllComponent,
+    ViewInputsComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

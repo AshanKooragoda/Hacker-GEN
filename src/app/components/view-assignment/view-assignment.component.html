@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Assignment Deatil
+  </h1>
+  <hr class="colorgraph">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Assignment No</th>
+      <th scope="col">Assignment Name</th>
+      <th scope="col">Descryption</th>
+      <th scope="col">Dead line</th>
+      <th scope="col">Language</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let i of assignments; let t = index">
+      <th scope="row">{{i.assignment_no}}</th>
+      <td>{{i.assignment_name}}</td>
+      <td>{{i.descryption}}</td>
+      <td>{{i.deadline}}</td>
+      <td>{{i.language}}</td>
+      <td>{{i.telephone}}</td>
+      <td><input type="submit" value=" Answer" class="btn btn-primary "></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

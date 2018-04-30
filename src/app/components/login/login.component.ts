@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user';
-// import {UserService} from '../../services/authentication.guard';
-// import {and} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +12,6 @@ export class LoginComponent implements OnInit {
   password: string;
   loginservice: UserService;
   userDetail: User;
-  // logincheck: boolean;
   constructor(private login: UserService) {
     this.loginservice = login;
   }
