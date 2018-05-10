@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Inputs Of assignments
+  </h1>
+  <hr class="colorgraph">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Input No</th>
+      <th scope="col">Assignment No</th>
+      <th scope="col">Input</th>
+      <th scope="col">Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let i of allinputs; let t = index">
+      <td>{{t+1}}</td>
+      <td>{{i.assignment_no}}</td>
+      <td>{{i.input}}</td>
+      <td>{{i.output}}</td>
+      <td><input type="submit" value="Remove" class="btn btn-primary " (click)="deleteInputs(i.in_no)"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

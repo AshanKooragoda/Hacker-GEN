@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>User Details
+    <small>Admin Login Require</small>
+  </h1>
+  <hr class="colorgraph">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Index NO</th>
+      <th scope="col">Name</th>
+      <th scope="col">User type</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telephone No</th>
+      <th scope="col">Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let i of users; let t = index">
+        <th scope="row">{{t+1}}</th>
+        <td>{{i.index_no}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.type}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.telephone}}</td>
+        <td><input type="submit" value=" click here to Remove User" class="btn btn-primary " (click)="deleteUser(users[t].index_no)"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
