@@ -8,9 +8,13 @@ import {Router} from "@angular/router";
 })
 export class HomePageOfAllComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor(protected router: Router) {
     // this.router.navigate(['home']);
   }
+=======
+  constructor(protected router: Router) { }
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
 
   ngOnInit() {
   }

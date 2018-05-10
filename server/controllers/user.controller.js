@@ -130,8 +130,11 @@ const deleteInput = (user) => {
       })
   });
 };
+<<<<<<< HEAD
 ///////////////////////////////////////////////////////
 // get all plagarism
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
 const getPlagarsim = () => {
   return new Promise((resolve, reject) => {
     connection.query("select * from plagarism",
@@ -143,6 +146,7 @@ const getPlagarsim = () => {
       })
   });
 };
+<<<<<<< HEAD
 ////////////////////////////////////////////////////
 // get specific inputs
 const getinputs = (user) => {
@@ -161,4 +165,11 @@ const getinputs = (user) => {
 
 module.exports = {
   getUser, addUser, allUser, deleteUser, addAssignment, allAssignments, addInput, allInputs, deleteInput, getPlagarsim, getinputs
+=======
+///////////////////////////////////////////////////////
+// get all plagarism
+
+module.exports = {
+  getUser, addUser, allUser, deleteUser, addAssignment, allAssignments, addInput, allInputs, deleteInput, getPlagarsim
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
 };

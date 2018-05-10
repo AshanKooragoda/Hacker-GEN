@@ -13,12 +13,17 @@
     </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
     <tr *ngFor="let i of assignments; let a = index">
+=======
+    <tr  *ngFor="let i of assignments; let t = index">
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
       <th scope="row">{{i.assignment_no}}</th>
       <td>{{i.assignment_name}}</td>
       <td>{{i.descryption}}</td>
       <td>{{i.deadline}}</td>
       <td>{{i.language}}</td>
+<<<<<<< HEAD
 
       <td>
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" (click)="getAssiName(a)"> Answer</button>
@@ -59,6 +64,10 @@
           </div>
         </div>
       </td>
+=======
+      <td>{{i.telephone}}</td>
+      <td><input type="submit" value=" Answer" class="btn btn-primary "></td>
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
     </tr>
     </tbody>
   </table>

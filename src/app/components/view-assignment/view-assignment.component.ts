@@ -8,6 +8,7 @@ import {UserService} from "../../services/user.service";
 })
 export class ViewAssignmentComponent implements OnInit {
   assignments: object;
+<<<<<<< HEAD
   inAndOut: object[];
   loginservice: UserService;
   answer: string;
@@ -15,26 +16,41 @@ export class ViewAssignmentComponent implements OnInit {
   language: string;
   title: string;
   assignment_ID: string;
+=======
+  loginservice: UserService;
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
 
   constructor(private login: UserService) {
     this.loginservice = login;
     this.getAssignments();
+<<<<<<< HEAD
     this.inAndOut = [];
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
   }
 
   ngOnInit() {
   }
 
+<<<<<<< HEAD
   ////////////////// Get all assignments from database
+=======
+  // Get all assignments from database
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
   getAssignments() {
     this.loginservice.allAssignments().subscribe(
       data => {
         this.assignments = data;
+<<<<<<< HEAD
+=======
+        console.log(data);
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
       }, error => {
         alert('database error');
         console.log(JSON.stringify(error.json()));
       });
   }
+<<<<<<< HEAD
 
   ////////////// compile the code
   compile(ans, lang) {
@@ -77,4 +93,6 @@ export class ViewAssignmentComponent implements OnInit {
     }
 
   }
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
 }

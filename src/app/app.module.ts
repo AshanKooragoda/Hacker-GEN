@@ -17,8 +17,11 @@ import { PlagarismComponent } from './components/plagarism/plagarism.component';
 import { ViewAssignmentComponent } from './components/view-assignment/view-assignment.component';
 import { HomePageOfAllComponent } from './components/home-page-of-all/home-page-of-all.component';
 import { ViewInputsComponent } from './components/view-inputs/view-inputs.component';
+<<<<<<< HEAD
 import { AnswerComponent } from './components/answer/answer.component';
 
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
 
 const appRoutes: Routes = [
   {path: '', component: HomePageOfAllComponent, children: [
@@ -27,10 +30,17 @@ const appRoutes: Routes = [
     {path: 'view_assignment', component: ViewAssignmentComponent},
     {path: 'view_users', component: ViewUsersComponent},
     {path: 'view_input', component: ViewInputsComponent},
+<<<<<<< HEAD
     {path: 'home', component: HomeComponent},
     {path: 'plagrism', component: PlagarismComponent}
   ]},
   {path: 'answer', component: AnswerComponent},
+=======
+    {path: 'plagrism', component: PlagarismComponent}
+  ]},
+  {path: 'login', component: LoginComponent}
+  // {path: 'login', component: LoginformComponent},
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
   // {path: 'login/:username', component: LoginformComponent},
   // {path: '**', component: NotfoundComponent}
 ];
@@ -50,7 +60,10 @@ const appRoutes: Routes = [
     ViewAssignmentComponent,
     HomePageOfAllComponent,
     ViewInputsComponent,
+<<<<<<< HEAD
     AnswerComponent,
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

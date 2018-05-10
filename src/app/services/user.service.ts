@@ -66,6 +66,7 @@ export class UserService {
   allAssignments() {
     return this.http.get('http://localhost:3000/all_assignments').map(res => res.json());
   }
+<<<<<<< HEAD
 
   //////////////// add inputs
   addInputOutput(assignment_no, input, output) {
@@ -78,10 +79,25 @@ export class UserService {
       .map(res => res.json());
   }
 
+=======
+
+  //////////////// add inputs
+  addInputOutput(assignment_no, input, output) {
+    return this.http.post('http://localhost:3000/add_input', JSON.stringify({
+        assignment_no,
+        input,
+        output
+      }),
+      new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
+      .map(res => res.json());
+  }
+
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
   ///////////////////////////// all inputs
   allInputs() {
     return this.http.get('http://localhost:3000/all_inputs').map(res => res.json());
   }
+<<<<<<< HEAD
 
   ///////////////////////////// delete input
   deleteInput(input_no) {
@@ -109,10 +125,18 @@ export class UserService {
     return this.http.post('http://localhost:3000/compile', JSON.stringify({
         script,
         language
+=======
+
+  ///////////////////////////// delete input
+  deleteInput(input_no) {
+    return this.http.post('http://localhost:3000/delete_input', JSON.stringify({
+        input_no
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
       }),
       new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
       .map(res => res.json());
   }
+<<<<<<< HEAD
   // get inputs and outputs of specific assignment
   inAndOutOfAssignment(assignment_no) {
     return this.http.post('http://localhost:3000/inputs', JSON.stringify({
@@ -120,5 +144,9 @@ export class UserService {
       }),
       new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
       .map(res => res.json());
+=======
+  allplagarism() {
+    return this.http.get('http://localhost:3000/plagarism').map(res => res.json());
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
   }
 }

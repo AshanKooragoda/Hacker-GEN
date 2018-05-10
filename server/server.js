@@ -46,7 +46,11 @@ app.get("/all_users", (req, res) => {
 /////////////////////////////////////////////////
 // delete users
 app.post("/delete_user", (req, res) => {
+<<<<<<< HEAD
   //console.log(req.body);
+=======
+  console.log(req.body);
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
   UserController.deleteUser(req.body).then((result) => {
     res.status(200).send(result);
   }).catch((err) => {
@@ -93,17 +97,26 @@ app.get("/all_inputs", (req, res) => {
 /////////////////////////////////////////////
 // delete inputs
 app.post("/delete_input", (req, res) => {
+<<<<<<< HEAD
  // console.log(req.body);
   UserController.deleteInput(req.body).then((result) => {
     res.status(200).send(result);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     re.methord(script='',lan='');
+=======
+  console.log(req.body);
+  UserController.deleteInput(req.body).then((result) => {
+    res.status(200).send(result);
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
   }).catch((err) => {
     res.status(400).send(err);
   });
 });
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
 //////////////////////////////////////////
 // get plagarism
 app.get("/plagarism", (req, res) => {
@@ -113,6 +126,7 @@ app.get("/plagarism", (req, res) => {
     res.status(400).send(err);
   });
 });
+<<<<<<< HEAD
 
 app.post("/compile", (req, res) => {
   console.log(req.body.script)
@@ -145,6 +159,8 @@ app.post("/inputs", (req, res) => {
   });
 });
 
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
 app.listen(3000, () => {
   console.log("Server is up on 3000");
 });
