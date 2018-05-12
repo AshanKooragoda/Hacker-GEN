@@ -7,12 +7,18 @@
     <tr>
       <th scope="col">Assignment No</th>
       <th scope="col">Assignment Name</th>
+<<<<<<< HEAD
       <th scope="col">Teacher Name</th>
       <th scope="col">Descryption</th>
+=======
+      <th scope="col">Descryption</th>
+      <th scope="col">Dead line</th>
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
       <th scope="col">Language</th>
     </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
     <tr *ngFor="let i of assignments; let a = index">
       <th scope="row">{{i.assignment_no}}</th>
       <td>{{i.assignment_name}}</td>
@@ -21,6 +27,21 @@
       <td>{{i.language}}</td>
 
       <td *ngIf="student">
+=======
+<<<<<<< HEAD
+    <tr *ngFor="let i of assignments; let a = index">
+=======
+    <tr  *ngFor="let i of assignments; let t = index">
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+      <th scope="row">{{i.assignment_no}}</th>
+      <td>{{i.assignment_name}}</td>
+      <td>{{i.descryption}}</td>
+      <td>{{i.deadline}}</td>
+      <td>{{i.language}}</td>
+<<<<<<< HEAD
+
+      <td>
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" (click)="getAssiName(a)"> Answer</button>
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
@@ -28,11 +49,19 @@
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
+<<<<<<< HEAD
                 <button type="button" class="close" data-dismiss="modal" (click)="resetAll()">&times;</button>
                 <h4 class="modal-title">{{title}}</h4>
               </div>
               <div class="modal-body">
                 <textarea name="description" class="form-control" required="" rows="5" [(ngModel)]="answer"></textarea>
+=======
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{title}}</h4>
+              </div>
+              <div class="modal-body">
+                <textarea name="description" class="form-control" required="" rows="15" [(ngModel)]="answer"></textarea>
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
               </div>
               <div class="modal-footer">
 
@@ -51,6 +80,7 @@
                     <option value="cobol">Cobol</option>
                   </select>
                 </div>
+<<<<<<< HEAD
                 <button type="button" class="btn btn-warning" (click)="hasAnswer()">Lord prvious answer</button>
                 <button type="button" class="btn btn-primary" (click)="saveanswer()">Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal" (click)="resetAll()">Close</button>
@@ -77,11 +107,23 @@
                   </table>
                 <h1>Your Final marks : {{finalMark}}</h1>
 
+=======
+                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-warning" (click)="testAndMark()">Test</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
               </div>
             </div>
           </div>
         </div>
       </td>
+<<<<<<< HEAD
+=======
+=======
+      <td>{{i.telephone}}</td>
+      <td><input type="submit" value=" Answer" class="btn btn-primary "></td>
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
     </tr>
     </tbody>
   </table>

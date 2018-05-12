@@ -8,7 +8,11 @@ import {UserService} from '../../services/user.service';
 })
 export class ViewUsersComponent implements OnInit {
   loginservice: UserService;
+<<<<<<< HEAD
   users: object;
+=======
+  users: object[]
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   constructor(private login: UserService) {
     this.loginservice = login;
     this.aaaa();

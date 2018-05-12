@@ -3,7 +3,11 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var request = require('request');
 var UserController = require('./controllers/user.controller');
+<<<<<<< HEAD
 var axios = require('axios/lib/axios');
+=======
+var axios=require('axios/lib/axios');
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 var app = express();
 
 
@@ -27,7 +31,11 @@ app.post("/get_user", (req, res) => {
 
 //get specific user according to username and password
 app.post("/add_user", (req, res) => {
+<<<<<<< HEAD
   // console.log(req.body);
+=======
+  console.log(req.body);
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   UserController.addUser(req).then((result) => {
     res.status(200).send(result);
   }).catch((err) => {
@@ -46,7 +54,15 @@ app.get("/all_users", (req, res) => {
 /////////////////////////////////////////////////
 // delete users
 app.post("/delete_user", (req, res) => {
+<<<<<<< HEAD
   //console.log(req.body);
+=======
+<<<<<<< HEAD
+  //console.log(req.body);
+=======
+  console.log(req.body);
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   UserController.deleteUser(req.body).then((result) => {
     res.status(200).send(result);
   }).catch((err) => {
@@ -74,7 +90,11 @@ app.get("/all_assignments", (req, res) => {
 /////////////////////////////////////////////////////
 // Add input out put
 app.post("/add_input", (req, res) => {
+<<<<<<< HEAD
   // console.log(req.body);
+=======
+  console.log(req.body);
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   UserController.addInput(req.body).then((result) => {
     res.status(200).send(result);
   }).catch((err) => {
@@ -93,17 +113,39 @@ app.get("/all_inputs", (req, res) => {
 /////////////////////////////////////////////
 // delete inputs
 app.post("/delete_input", (req, res) => {
+<<<<<<< HEAD
   // console.log(req.body);
   UserController.deleteInput(req.body).then((result) => {
     res.status(200).send(result);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     re.methord(script = '', lan = '');
+=======
+<<<<<<< HEAD
+ // console.log(req.body);
+  UserController.deleteInput(req.body).then((result) => {
+    res.status(200).send(result);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    re.methord(script='',lan='');
+=======
+  console.log(req.body);
+  UserController.deleteInput(req.body).then((result) => {
+    res.status(200).send(result);
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   }).catch((err) => {
     res.status(400).send(err);
   });
 });
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 //////////////////////////////////////////
 // get plagarism
 app.get("/plagarism", (req, res) => {
@@ -113,16 +155,30 @@ app.get("/plagarism", (req, res) => {
     res.status(400).send(err);
   });
 });
+<<<<<<< HEAD
 
 app.post("/compile", (req, res) => {
   axios.post('https://api.jdoodle.com/v1/execute', {
     clientId: '63627f330bfbcbbf837c36d38f388ad8',
     clientSecret: 'cc58eeef460fc33276298b4faa1f542ddcbb1dbab045ca4584dd04bd1de5ad36',
+=======
+<<<<<<< HEAD
+
+app.post("/compile", (req, res) => {
+  console.log(req.body.script)
+  axios.post('https://api.jdoodle.com/v1/execute', {
+    clientId: 'e5054c11ab60a06eb141b7c0f5f61390',
+    clientSecret:'17b22e4aecd316eebee36fecab8d4cd3f3b5ec661a7ca92ad4e4a236babdd9d9',
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
     //script: "<?php function writeMsg() { echo \"Hello world!\"; echo \"Heddddddddddllo world!\";} writeMsg() // call the function?>",
     script: req.body.script,
     //language:"php",
     language: req.body.language,
+<<<<<<< HEAD
     versionIndex: "0"
+=======
+    versionIndex:"0"
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   })
     .then(function (response) {
       //console.log(response.data);
@@ -143,6 +199,7 @@ app.post("/inputs", (req, res) => {
     res.status(400).send(err);
   });
 });
+<<<<<<< HEAD
 /// save answers to database
 app.post("/save_answer", (req, res) => {
   //console.log(req.body);
@@ -214,6 +271,11 @@ app.get("/allAnswers", (req, res) => {
     res.status(400).send(err);
   });
 });
+=======
+
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 app.listen(3000, () => {
   console.log("Server is up on 3000");
 });

@@ -13,6 +13,7 @@
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
+<<<<<<< HEAD
               <!--<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="type" tabindex="2" [(ngModel)]="logintype">-->
               <select class="select form-control input-lg" id="select" name="select" [(ngModel)]="logintype" placeholder="type" tabindex="2" >
                 <option *ngIf="admin" value="teacher">Teacher</option>
@@ -20,6 +21,9 @@
                 <option *ngIf="admin" value="admin">Admin</option>
 
               </select>
+=======
+              <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="type" tabindex="2" [(ngModel)]="logintype">
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
             </div>
           </div>
         </div>
@@ -49,9 +53,16 @@
 
         <hr class="colorgraph">
         <div class="row">
+<<<<<<< HEAD
           <div class="col-xs-12 col-md-12">
             <input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="8" (click)="addusersToDatabase()">
           </div>
+=======
+          <div class="col-xs-12 col-md-6">
+            <input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7" (click)="addusersToDatabase()">
+          </div>
+          <div class="col-xs-12 col-md-6"><a routerLink="" class="btn btn-success btn-block btn-lg">Sign In</a ></div>
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
         </div>
       </form>
     </div>

@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
+<<<<<<< HEAD
 import {Router} from "@angular/router";
 import {log} from "util";
+=======
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 
 @Component({
   selector: 'app-view-assignment',
@@ -10,6 +13,7 @@ import {log} from "util";
 })
 export class ViewAssignmentComponent implements OnInit {
   assignments: object;
+<<<<<<< HEAD
   inAndOut: object;
   loginservice: UserService;
   answer: string;
@@ -44,29 +48,82 @@ export class ViewAssignmentComponent implements OnInit {
     } else {
       this.router.navigate(['']);
     }
+=======
+<<<<<<< HEAD
+  inAndOut: object[];
+  loginservice: UserService;
+  answer: string;
+  tempAnswer: string;
+  language: string;
+  title: string;
+  assignment_ID: string;
+=======
+  loginservice: UserService;
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+
+  constructor(private login: UserService) {
+    this.loginservice = login;
+    this.getAssignments();
+<<<<<<< HEAD
+    this.inAndOut = [];
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   }
 
   ngOnInit() {
   }
 
+<<<<<<< HEAD
   ////////////////// Get all assignments from database
+=======
+<<<<<<< HEAD
+  ////////////////// Get all assignments from database
+=======
+  // Get all assignments from database
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   getAssignments() {
     this.loginservice.allAssignments().subscribe(
       data => {
         this.assignments = data;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        console.log(data);
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
       }, error => {
         alert('database error');
         console.log(JSON.stringify(error.json()));
       });
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+  ////////////// compile the code
+  compile(ans, lang) {
+    this.loginservice.compiler(ans, lang).subscribe(
+      data => {
+        console.log(data);
+      }, error => {
+        console.log(JSON.stringify((error.json())));
+      });
+  }
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 
   ////////////// get inputs and outputs
   inputsAndOutputs() {
     this.loginservice.inAndOutOfAssignment(this.assignment_ID).subscribe(
       data => {
         this.inAndOut = data;
+<<<<<<< HEAD
         this.numberofInputs = data.length;
         // console.log(data);
+=======
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
       }, error => {
         console.log(JSON.stringify((error.json())));
       });
@@ -80,6 +137,7 @@ export class ViewAssignmentComponent implements OnInit {
   }
 
 /// Test and mark marks of the assignment
+<<<<<<< HEAD
 
   compile(i) {
     // console.log(i);
@@ -156,4 +214,21 @@ export class ViewAssignmentComponent implements OnInit {
     this.answer = '';
     this.language = '';
   }
+=======
+  testAndMark() {
+    // console.log(this.inAndOut);
+    // console.log(this.answer);
+    if (this.language == 'php') {
+      let i;
+      for (i = 0; i < this.inAndOut.length; i++) {
+        this.tempAnswer = this.answer.replace("?>", "echo Test(") + this.inAndOut[i].input + ');?>';
+        this.compile(this.tempAnswer, this.language);
+        // console.log(this.tempAnswer);
+      }
+    }
+
+  }
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 }

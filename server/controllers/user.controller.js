@@ -60,8 +60,13 @@ const deleteUser = (user) => {
 // add assignments
 const addAssignment = (user) => {
   return new Promise((resolve, reject) => {
+<<<<<<< HEAD
     connection.query("insert into assignment (assignment_name, descryption, language) VALUES (?, ?, ?)",
       [user.assignment_name, user.descryption, user.language],
+=======
+    connection.query("insert into assignment (assignment_name, descryption, password, deadline, language) VALUES (?, ?, ?, ?, ?)",
+      [user.assignment_name, user.descryption, user.password, user.deadline, user.language],
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
       (err, res) => {
         if (err) {
           return reject(err);
@@ -130,8 +135,16 @@ const deleteInput = (user) => {
       })
   });
 };
+<<<<<<< HEAD
 ///////////////////////////////////////////////////////
 // get all plagarism
+=======
+<<<<<<< HEAD
+///////////////////////////////////////////////////////
+// get all plagarism
+=======
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 const getPlagarsim = () => {
   return new Promise((resolve, reject) => {
     connection.query("select * from plagarism",
@@ -143,6 +156,10 @@ const getPlagarsim = () => {
       })
   });
 };
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 ////////////////////////////////////////////////////
 // get specific inputs
 const getinputs = (user) => {
@@ -157,6 +174,7 @@ const getinputs = (user) => {
       })
   });
 };
+<<<<<<< HEAD
 ///////////////////////////////////////////////////////
 // save answers to database
 const saveanswer = (user) => {
@@ -264,9 +282,22 @@ const getAllAns = () => {
       })
   });
 };
+=======
 
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 
 module.exports = {
+  getUser, addUser, allUser, deleteUser, addAssignment, allAssignments, addInput, allInputs, deleteInput, getPlagarsim, getinputs
+=======
+///////////////////////////////////////////////////////
+// get all plagarism
+
+module.exports = {
+<<<<<<< HEAD
   getUser, addUser, allUser, deleteUser, addAssignment, allAssignments, addInput, allInputs, deleteInput,
   getPlagarsim, getinputs, saveanswer, checkanswer, updateAnswer, updateUserDetail, getAns, getAllAns
+=======
+  getUser, addUser, allUser, deleteUser, addAssignment, allAssignments, addInput, allInputs, deleteInput, getPlagarsim
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 };

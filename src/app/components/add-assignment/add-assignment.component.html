@@ -4,7 +4,11 @@
   </h1>
   <hr class="colorgraph">
   <div class="row">
+<<<<<<< HEAD
     <div class="col-xs-12 col-sm-12 col-md-12">
+=======
+    <div class="col-xs-12 col-sm-6 col-md-6">
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
       <div class="form-group">
         <label for="exampleInputAssignmentName">Assignment Name</label>
         <input type="email" class="form-control input-lg" id="exampleInputAssignmentName" aria-describedby="emailHelp"
@@ -12,6 +16,7 @@
       </div>
     </div>
 
+<<<<<<< HEAD
     <!--<div class="col-xs-12 col-sm-6 col-md-6">-->
       <!--<div class="form-group">-->
         <!--<label for="assignmentpasssword">Assignment Password</label>-->
@@ -19,6 +24,15 @@
                <!--placeholder="Enter Assignment password" [(ngModel)]="assignmenr_password">-->
       <!--</div>-->
     <!--</div>-->
+=======
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label for="assignmentpasssword">Assignment Password</label>
+        <input type="password" class="form-control input-lg" id="assignmentpasssword" aria-describedby="emailHelp"
+               placeholder="Enter Assignment password" [(ngModel)]="assignmenr_password">
+      </div>
+    </div>
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   </div>
 
 
@@ -31,6 +45,7 @@
 
 
   <div class="row">
+<<<<<<< HEAD
     <!--<div class="col-xs-12 col-sm-6 col-md-6">-->
       <!--<div class="form-group">-->
         <!--<label for="deadLine">Dead Line</label>-->
@@ -58,6 +73,23 @@
           <option value="C">C</option>
           <option value="Pascal">Pascal</option>
           <option value="Cobol">Cobol</option>
+=======
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label for="deadLine">Dead Line</label>
+        <input id="deadLine" name="date" placeholder="MM/DD/YYYY" type="date" class="form-control input-lg"
+               [(ngModel)]="deadline"/>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="form-group ">
+        <label class="control-label " for="select">Select a language</label>
+        <select class="select form-control input-lg" id="select" name="select" [(ngModel)]="language">
+          <option value="Python">Python</option>
+          <option value="Java">Java</option>
+          <option value="Java Script">Java Script</option>
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
         </select>
       </div>
     </div>

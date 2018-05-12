@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user';
+<<<<<<< HEAD
 import {RouterModule, Router} from '@angular/router';
+=======
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 
 @Component({
   selector: 'app-login',
@@ -12,8 +15,13 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   userDetail: User;
+<<<<<<< HEAD
 
   constructor(private login: UserService, private router: Router) {
+=======
+  constructor(private login: UserService) {
+    this.loginservice = login;
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   }
 
   ngOnInit() {

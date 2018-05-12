@@ -14,20 +14,31 @@ export class AddAssignmentComponent implements OnInit {
   output: string;
   ////////////////////////////////// input output ariables
   assignment_name: string;
+<<<<<<< HEAD
   descrption: string;
   language: string;
   loginservice: UserService;
+=======
+  assignmenr_password: string;
+  deadline: string;
+  language: 'Python';
+  loginservice: UserService;
+  descrption: string;
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   assignment_no;
 ///////////////////////////////////////////////////////////
   constructor(private login: UserService) {
     this.loginservice = login;
     this.inputs = [];
     this.outputs = [];
+<<<<<<< HEAD
     this.assignment_name = '';
     this.descrption = '';
     this.language = '';
     this.input = '';
     this.output = '';
+=======
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
   }
 
   ngOnInit() {
@@ -35,6 +46,7 @@ export class AddAssignmentComponent implements OnInit {
 
   ///////////////////////////////// add inputs to the assignment
   addInputOutput() {
+<<<<<<< HEAD
     if (this.output !== '' && this.input !== '') {
       if (this.input.length > 0 && this.input.length > 0) {
         this.outputs.push(this.output);
@@ -46,6 +58,19 @@ export class AddAssignmentComponent implements OnInit {
       }
     } else {
       alert('please enter correct input outputs');
+=======
+    if (this.output != null && this.input != null) {
+      if (this.input.length > 0 && this.input.length > 0) {
+        this.outputs.push(this.output);
+        this.inputs.push(this.input);
+        this.input = null;
+        this.output = null;
+      } else {
+        alert('please enter input outputs');
+      }
+    } else {
+      alert('please enter correct detail');
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
     }
   }
 
@@ -57,9 +82,15 @@ export class AddAssignmentComponent implements OnInit {
 
   ////////////////////////// add assignment to database
   addassignment() {
+<<<<<<< HEAD
     if (this.assignment_name !== '' && this.inputs.length > 0 && this.outputs.length > 0 && this.descrption !== '' && this.language !== '') {
       if (this.assignment_name.length > 0 && this.descrption.length > 0) {
         this.loginservice.addAssignment(this.assignment_name, this.descrption, this.language).subscribe(
+=======
+    if (this.assignment_name != null && this.deadline != null && this.inputs.length > 0 && this.outputs.length > 0 && this.descrption != null) {
+      if (this.assignment_name.length > 0 && this.deadline.length > 0 && this.descrption.length > 0) {
+        this.loginservice.addAssignment(this.assignment_name, this.descrption, this.assignmenr_password, this.deadline, this.language).subscribe(
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
           data => {
             this.assignment_no = data[0]['max(assignment_no)'];
             alert('Assignment added');
@@ -69,8 +100,11 @@ export class AddAssignmentComponent implements OnInit {
             console.log(JSON.stringify(error.json()));
           });
       }
+<<<<<<< HEAD
     }else {
       alert('Assignment is not added please check assignment again');
+=======
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
     }
   }
 
@@ -81,7 +115,11 @@ export class AddAssignmentComponent implements OnInit {
       this.loginservice.addInputOutput(this.assignment_no, this.inputs[i], this.outputs[i]).subscribe(
         data => {
         }, error => {
+<<<<<<< HEAD
           alert('output is not added please input valid data');
+=======
+          console.log('output is not added please input valid data');
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
           console.log(JSON.stringify(error.json()));
         });
     }

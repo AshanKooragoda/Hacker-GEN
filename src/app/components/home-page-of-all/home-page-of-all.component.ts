@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user';
+=======
+import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 
 @Component({
   selector: 'app-home-page-of-all',
@@ -10,6 +15,7 @@ import {User} from '../../models/user';
 })
 export class HomePageOfAllComponent implements OnInit {
 
+<<<<<<< HEAD
   loginservice: UserService;
   teacher: boolean;
   student: boolean;
@@ -40,6 +46,15 @@ export class HomePageOfAllComponent implements OnInit {
   logout() {
     this.router.navigate(['']);
   }
+=======
+<<<<<<< HEAD
+  constructor(protected router: Router) {
+    // this.router.navigate(['home']);
+  }
+=======
+  constructor(protected router: Router) { }
+>>>>>>> b940d60dc4348c0f17093af749df1bfaad4f1e0c
+>>>>>>> b32ac471c80f6a9eb27cd156eea95a3a5f925795
 
   ngOnInit() {
   }
