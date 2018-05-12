@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>View Answers</h1>
+  <hr class="colorgraph">
+  <div class="row" *ngIf="visible">
+    <div class="col-xs-12 col-sm-12 col-md-12"><h2> Enter index Of student : </h2><br></div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="form-group">
+        <input type="text" class="form-control input-lg" placeholder="Type here to search from index"
+               [(ngModel)]="index">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="form-group">
+        <input type="submit" value="See Answers" class="btn btn-primary btn-block btn-lg"
+               (click)="getanswer()"><br>
+      </div>
+    </div>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Assignment No</th>
+      <th *ngIf="visible" scope="col">Index No</th>
+      <th scope="col">Answer</th>
+      <th scope="col">Langague</th>
+      <th scope="col">Marks</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i of answers; let t = index">
+      <td>{{i.assignment_no}}</td>
+      <td *ngIf="visible">{{i.index_no}}</td>
+      <td>{{i.answer}}</td>
+      <td>{{i.language}}</td>
+      <td>{{i.marks}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

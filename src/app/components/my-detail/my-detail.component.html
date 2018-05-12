@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+      <form role="form">
+        <hr class="colorgraph">
+        <h2>Your Profile Details
+        </h2>
+        <hr class="colorgraph">
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <h3>First name :</h3>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <h3>{{userDetail.name}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <h3>Index Number :</h3>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <h3>{{userDetail.index}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <h3>Email Address :</h3>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <h3>{{userDetail.username}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <h3> Telephone Number :</h3>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <h3>{{userDetail.telephone}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <hr class="colorgraph">
+        <h2>Change Your Details</h2>
+        <hr class="colorgraph">
+        <input type="submit" value="Click me To change your  Detail" class="btn btn-primary btn-block btn-lg"
+               (click)="showme()">
+        <hr *ngIf="show" class="colorgraph">
+        <div class="form-group" *ngIf="show">
+          <input type="text" name="First_Name" class="form-control input-lg" placeholder="First Name"
+                 [(ngModel)]="name">
+        </div>
+        <div class="form-group" *ngIf="show">
+          <input type="text" name="First_Name" class="form-control input-lg" placeholder="Email" [(ngModel)]="email">
+        </div>
+        <div class="form-group" *ngIf="show">
+          <input type="text" name="First_Name" class="form-control input-lg" placeholder="Contact"
+                 [(ngModel)]="contact">
+        </div>
+        <div class="form-group" *ngIf="show">
+          <input type="text" name="First_Name" class="form-control input-lg" placeholder="Enter Old Password"
+                 [(ngModel)]="oldpassword">
+        </div>
+
+        <div class="row" *ngIf="show">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="password" name="password" id="password" class="form-control input-lg"
+                     placeholder="New Password"
+                     [(ngModel)]="password">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="password" name="password_confirmation" id="password_confirmation"
+                     class="form-control input-lg" placeholder="Confirm new Password"
+                     [(ngModel)]="confirmpassword">
+            </div>
+          </div>
+        </div>
+
+        <hr class="colorgraph" *ngIf="show">
+        <div class="row" *ngIf="show">
+          <div class="col-xs-12 col-md-12">
+            <input type="submit" value="Change MY detail" class="btn btn-primary btn-block btn-lg"
+                   (click)="changeDetail()">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

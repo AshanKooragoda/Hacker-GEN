@@ -5,33 +5,17 @@ export class User {
   name: string;
   type: string;
   index: string;
+  telephone: string;
 
   constructor() {}
 
-  setUserDetail(username, password, name, type, index, loggedIn) {
-    this.isUserLoggedIn = loggedIn;
+  setUserDetail(username, password, name, type, index,telephone) {
     this.index = index;
     this.username = username;
     this.name = name;
     this.password = password;
     this.type = type;
+    this.telephone = telephone;
   }
-
-  // getUsername() {
-  //   return this.username;
-  // }
-  // getPassword() {
-  //   return this.password;
-  // }
-  // getName() {
-  //   return this.name;
-  // }
-  // isUserloggedIn() {
-  //   return this.isUserLoggedIn;
-  // }
-  //
-  // setUserloggedIn(loggedIn) {
-  //   this.isUserLoggedIn = loggedIn;
-  // }
 }
 

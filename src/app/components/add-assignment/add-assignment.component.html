@@ -1,0 +1,124 @@
+<div class="container">
+  <h1>Please Add Assignment...
+    <small>(Teacher Login Require)</small>
+  </h1>
+  <hr class="colorgraph">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="form-group">
+        <label for="exampleInputAssignmentName">Assignment Name</label>
+        <input type="email" class="form-control input-lg" id="exampleInputAssignmentName" aria-describedby="emailHelp"
+               placeholder="Enter Assignment Name" [(ngModel)]="assignment_name">
+      </div>
+    </div>
+
+    <!--<div class="col-xs-12 col-sm-6 col-md-6">-->
+      <!--<div class="form-group">-->
+        <!--<label for="assignmentpasssword">Assignment Password</label>-->
+        <!--<input type="password" class="form-control input-lg" id="assignmentpasssword" aria-describedby="emailHelp"-->
+               <!--placeholder="Enter Assignment password" [(ngModel)]="assignmenr_password">-->
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <label>Descryption</label>
+      <textarea name="description" class="form-control" required="" rows="8" [(ngModel)]="descrption"></textarea>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <!--<div class="col-xs-12 col-sm-6 col-md-6">-->
+      <!--<div class="form-group">-->
+        <!--<label for="deadLine">Dead Line</label>-->
+        <!--<input id="deadLine" name="date" placeholder="MM/DD/YYYY" type="date" class="form-control input-lg"-->
+               <!--[(ngModel)]="deadline"/>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="form-group ">
+        <label class="control-label " for="select">Select a language</label>
+        <select class="select form-control input-lg" id="select" name="select" [(ngModel)]="language">
+          <!--<option value="Python">Python</option>-->
+          <!--<option value="Java">Java</option>-->
+          <!--<option value="Java Script">Java Script</option>-->
+        <!--</select>-->
+        <!--<select class="select form-control input-lg" id="select" name="select" [(ngModel)]="language">-->
+          <option value="PHP">PHP</option>
+          <option value="Java">Java</option>
+          <option value="C++">C++</option>
+          <option value="Python 2">Python 2</option>
+          <option value="Python 3">Python 3</option>
+          <option value="Ruby">Ruby</option>
+          <option value="NodeJS">NodeJS</option>
+          <option value="C">C</option>
+          <option value="Pascal">Pascal</option>
+          <option value="Cobol">Cobol</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <div class="form-group">
+        <label for="Input">Test Input</label>
+        <input id="input" name="Input" placeholder="Enter Input" type="text" class="form-control input-lg"
+               [(ngModel)]="input"/>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <div class="form-group">
+        <label for="Output">Test Output</label>
+        <input id="Output" name="Output" placeholder="Enter Output" type="text" class="form-control input-lg"
+               [(ngModel)]="output"/>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <div class="form-group">
+        <label>Click Here To add Outputs</label>
+          <input type="submit" value="Add Input/Output" class="btn btn-primary btn-block btn-lg" tabindex="7"
+                 (click)="addInputOutput()">
+      </div>
+    </div>
+  </div>
+  <hr class="colorgraph">
+
+  <div class="showInput/Output">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Outputs</th>
+        <th scope="col">Inputs</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr  *ngFor="let outputs of outputs; let inputs of inputs; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{outputs}}</td>
+        <td>{{inputs}}</td>
+        <td><input type="submit" value="Delete" class="btn btn-primary " (click)="deleteInputOutput(i)"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="row">
+      <hr class="colorgraph">
+      <div class="form-group">
+        <input type="submit" value="Click Here To Add Assignment" class="btn btn-primary btn-block btn-lg" tabindex="7"
+               (click)="addassignment()">
+      </div>
+    </div>
+  </div>
+
+</div>
