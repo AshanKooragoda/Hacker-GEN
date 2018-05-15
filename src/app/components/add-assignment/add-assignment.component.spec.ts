@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
 
 import { AddAssignmentComponent } from './add-assignment.component';
+
 
 describe('AddAssignmentComponent', () => {
   let component: AddAssignmentComponent;
@@ -19,7 +20,8 @@ describe('AddAssignmentComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should have add-assignment function',
+    inject([AddAssignmentComponent], (service: AddAssignmentComponent) => {
+      expect(service.addassignment).toBeTruthy();
+    }));
 });
