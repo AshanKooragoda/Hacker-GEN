@@ -18,7 +18,7 @@ export class MyDetailComponent implements OnInit {
   // oldpassword: string;
   password: string;
   confirmpassword: string;
-  isPhoneNumber = require('is-phone-number');
+  // isPhoneNumber = require('is-phone-number');
 
   constructor(protected router: Router, private login: UserService) {
     this.userDetail = login.getUser();
@@ -44,7 +44,7 @@ export class MyDetailComponent implements OnInit {
   changeDetail() {
       if (this.name !== '' && this.email !== '' && this.contact !== '' && this.password !== '') {
         if (EmailValidator.validate(this.email)) {
-          if (this.isPhoneNumber(this.contact)) {
+          // if (this.isPhoneNumber(this.contact)) {
             this.login.updateUser(this.name, this.email, this.password, this.contact, this.login.getUser().index).subscribe(
               data => {
                 alert('User Deetail Updated');
@@ -53,9 +53,9 @@ export class MyDetailComponent implements OnInit {
                 alert('error please try again later...');
                 console.log(JSON.stringify(error.json()));
               });
-          }else {
-            alert('ENTER VALID PHONE NUMBER');
-          }
+         // }else {
+          ////  alert('ENTER VALID PHONE NUMBER');
+         // }
 
         }else {
           alert('Enter  Valid Email Address');

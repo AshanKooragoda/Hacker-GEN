@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   Phonenumber: string;
 
   condition: boolean;
-  isPhoneNumber = require('is-phone-number');
+  // isPhoneNumber = require('is-phone-number');
 
 
   constructor(private addusers: UserService) {
@@ -45,13 +45,13 @@ export class RegisterComponent implements OnInit {
 
   // add suers to database
   addusersToDatabase() {
-    console.log(this.isPhoneNumber(this.Phonenumber));
+    // console.log(this.isPhoneNumber(this.Phonenumber));
 
     this.condition = (this.email !== '' && this.password !== '' && this.loginname !== '' && this.logintype !== ''
     && this.id !== '' && this.Phonenumber !== '');  /// // check for empty values
     if (this.condition && this.confirmpassword === this.password) {
       if (EmailValidator.validate(this.email)) {
-        if (this.isPhoneNumber(this.Phonenumber)) {
+       // if (this.isPhoneNumber(this.Phonenumber)) {
           this.loginservice.adduser(this.id, this.loginname, this.logintype, this.email, this.password, this.Phonenumber).subscribe(
             data => {
               if (data.length > 0) {
@@ -62,9 +62,9 @@ export class RegisterComponent implements OnInit {
               alert('database error please try again later...');
               console.log(JSON.stringify(error.json()));
             });
-        } else {
-          alert('PLEASE ENTER VALID PHONE NUMBER');
-        }
+       // } else {
+        //  alert('PLEASE ENTER VALID PHONE NUMBER');
+       // }
       } else {
         alert('PLEASE ENTER VALID EMAIL');
       }
