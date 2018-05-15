@@ -2,6 +2,7 @@ import {Injectable, Inject} from '@angular/core';
 import {User} from '../models/user';
 import {Headers, Http, RequestOptions} from '@angular/http';
 import {Router} from '@angular/router';
+import 'rxjs/add/operator/map';
 
 
 @Injectable()
