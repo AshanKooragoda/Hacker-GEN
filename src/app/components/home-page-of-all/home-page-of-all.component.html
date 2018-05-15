@@ -1,0 +1,50 @@
+<div class="row" id="Header">
+  <div class="col-xs-10 col-sm-10 col-md-10">
+    <h1>HackerGEN
+      <small>(Automatic Programming Evaluating System)</small>
+    </h1>
+  </div>
+
+  <div class="col-xs-2 col-sm-2 col-md-2" id="lll">
+    <input type="submit" value="Home" class="btn btn-group-xs" id="logouthome" (click)="home()">
+    <input type="submit" value="Log Out" class="btn btn-group-xs" id="logouthome" (click)="logout()">
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <h4>Select what to do</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li (click)="router.navigate(['hackerGEN/home']);"><a>Home</a></li>
+        <li (click)="router.navigate(['hackerGEN/myDetail']);"><a>Change Profile Data</a></li>
+        <li *ngIf="! student" (click)="router.navigate(['hackerGEN/add_assignment']);"><a>Add assignment</a></li>
+        <li *ngIf="admin" (click)="router.navigate(['hackerGEN/view_users']);"><a>View Users</a></li>
+        <li *ngIf="! student" (click)="router.navigate(['hackerGEN/register']);"><a>Add Users</a></li>
+        <li (click)="router.navigate(['hackerGEN/view_assignment']);"><a>View assignment</a></li>
+        <li (click)="router.navigate(['hackerGEN/answers']);"><a>Answers</a></li>
+        <li *ngIf="! student" (click)="router.navigate(['hackerGEN/plagrism']);"><a>Plagarism</a></li>
+        <li *ngIf="! student" (click)="router.navigate(['hackerGEN/view_input']);"><a>All Inputs</a></li>
+
+
+        <!--<li><a routerLink="add_assignment">Add Assignment</a></li>-->
+        <!--<li><a routerLink="view_user">Add Assignment</a></li>-->
+        <!--<li><a routerLink="add_assignment">Add Assignment</a></li>-->
+        <!--<li><a routerLink="add_assignment">Add Assignment</a></li>-->
+
+      </ul>
+      <br>
+      <!--<div class="input-group">-->
+        <!--<input type="text" class="form-control" placeholder="Search Blog..">-->
+        <!--<span class="input-group-btn">-->
+          <!--<button class="btn btn-default" type="button">-->
+            <!--<span class="glyphicon glyphicon-search"></span>-->
+          <!--</button>-->
+        <!--</span>-->
+      <!--</div>-->
+    </div>
+    <div class="col-sm-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

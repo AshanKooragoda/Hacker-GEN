@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user';
-// import {UserService} from '../../services/authentication.guard';
-// import {and} from "@angular/router/src/utils/collection";
+import {RouterModule, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,50 +11,36 @@ import {User} from '../../models/user';
 export class LoginComponent implements OnInit {
   email: string;
   password: string;
-  loginservice: UserService;
   userDetail: User;
-  // logincheck: boolean;
-  constructor(private login: UserService) {
-    this.loginservice = login;
+
+  constructor(private login: UserService, private router: Router) {
   }
 
   ngOnInit() {
   }
-
+// check and autheticate user
   authenticate() {
-    if ( this.email != null && this.password != null) {
-      this.loginservice.authenticate(this.email, this.password).subscribe(
+    if (this.email != null && this.password != null) { // check for nulls
+      this.login.authenticate(this.email, this.password).subscribe(  // call service
         data => {
-          // console.log(data[0]);
-          if (data.length === 1) {
+          if (data.length > 0) {
+            // console.log(data);
             this.userDetail = new User();
-
-            this.userDetail.password = data[0].password;
             this.userDetail.type = data[0].type;
-            this.userDetail.username = data[0].username;
-            this.userDetail.name = data[0].name;
-            // this.userDetail.index = data[0].index;
-            console.log(this.userDetail.type);
-            this.navigateuser();
-          }else {
+            this.userDetail.username = data[0].email;
+            this.userDetail.name = data[0].name;  //////////////set user detail to userservice
+            this.userDetail.index = data[0].index_no;
+            this.userDetail.telephone = data[0].telephone;
+            // console.log(this.userDetail);
+            this.router.navigate(['hackerGEN']);
+            this.login.setUser(this.userDetail);
+          } else {
             console.log('Enter correct detail');
           }
         }, error => {
           console.log('database error');
-          // console.log(JSON.stringify(error.json()));
+          console.log(JSON.stringify(error.json()));
         });
-    }
-  }
-
-  navigateuser() {
-    if (this.userDetail.type.match('teacher')) {
-      console.log('a');
-    }
-    if (this.userDetail.type.match('student')) {
-      console.log('b');
-    }
-    if (this.userDetail.type.match('admin')) {
-      console.log('c');
     }
   }
 

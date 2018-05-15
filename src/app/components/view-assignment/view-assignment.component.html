@@ -1,0 +1,88 @@
+<div class="container">
+  <h1>Assignment Deatil
+  </h1>
+  <hr class="colorgraph">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Assignment No</th>
+      <th scope="col">Assignment Name</th>
+      <th scope="col">Teacher Name</th>
+      <th scope="col">Descryption</th>
+      <th scope="col">Language</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i of assignments; let a = index">
+      <th scope="row">{{i.assignment_no}}</th>
+      <td>{{i.assignment_name}}</td>
+      <td>{{i.teacher}}</td>
+      <td>{{i.descryption}}</td>
+      <td>{{i.language}}</td>
+
+      <td *ngIf="student">
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" (click)="getAssiName(a)"> Answer</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" (click)="resetAll()">&times;</button>
+                <h4 class="modal-title">{{title}}</h4>
+              </div>
+              <div class="modal-body">
+                <textarea name="description" class="form-control" required="" rows="5" [(ngModel)]="answer"></textarea>
+              </div>
+              <div class="modal-footer">
+
+                <div class="form-group ">
+                  <label class="control-label " for="select">Select a language</label>
+                  <select class="select form-control input-lg" id="select" name="select" [(ngModel)]="language">
+                    <option value="php">PHP</option>
+                    <option value="java">Java</option>
+                    <option value="cpp">C++</option>
+                    <option value="python2">Python 2</option>
+                    <option value="python3">Python 3</option>
+                    <option value="ruby">Ruby</option>
+                    <option value="nodejs">NodeJS</option>
+                    <option value="c">C</option>
+                    <option value="pascal">Pascal</option>
+                    <option value="cobol">Cobol</option>
+                  </select>
+                </div>
+                <button type="button" class="btn btn-warning" (click)="hasAnswer()">Lord prvious answer</button>
+                <button type="button" class="btn btn-primary" (click)="saveanswer()">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="resetAll()">Close</button>
+
+
+                  <h1>Test your assignments
+                  </h1>
+                  <hr class="colorgraph">
+                  <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                      <th scope="col">Test case</th>
+                      <th scope="col">Test</th>
+                      <th scope="col">Output</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  *ngFor="let i of inAndOut; let t = index">
+                      <td>{{t+1}}</td>
+                      <td><button type="button" class="btn btn-primary" (click)="compile(t)">Test</button></td>
+                      <td>{{i.output}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                <h1>Your Final marks : {{finalMark}}</h1>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

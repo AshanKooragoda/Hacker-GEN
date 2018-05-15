@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Inputs Of assignments
+  </h1>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12"><h2> Enter Assignment Index : </h2><br></div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="form-group">
+        <input type="text" class="form-control input-lg" placeholder="Type here to search from Assignmentindex"
+               [(ngModel)]="assignment_no">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="form-group">
+        <input type="submit" value="See Answers" class="btn btn-primary btn-block btn-lg"
+               (click)="assignment(assignment_no)"><br>
+      </div>
+    </div>
+  </div>
+
+  <hr class="colorgraph">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Input No</th>
+      <th scope="col">Assignment No</th>
+      <th scope="col">Input</th>
+      <th scope="col">Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let i of allinputs; let t = index">
+      <td>{{t+1}}</td>
+      <td>{{i.assignment_no}}</td>
+      <td>{{i.input}}</td>
+      <td>{{i.output}}</td>
+      <td><input type="submit" value="Remove" class="btn btn-primary " (click)="deleteInputs(i.in_no)"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
