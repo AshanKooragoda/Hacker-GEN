@@ -31,7 +31,7 @@ export class PlagarismComponent implements OnInit {
     this.loginservice.allplagarism().subscribe(
       data => {
         this.plagrism = data;
-        console.log(data);
+        // console.log(data);
       }, error => {
         alert('database error');
         console.log(JSON.stringify(error.json()));

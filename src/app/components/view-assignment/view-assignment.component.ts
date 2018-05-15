@@ -31,7 +31,6 @@ export class ViewAssignmentComponent implements OnInit {
     // console.log(login.getUser());
     this.answer = '';
     this.finalMark = 0;
-    // set user
     this.student = false;
     this.teacher = false;
     this.admin = false;
@@ -166,7 +165,7 @@ export class ViewAssignmentComponent implements OnInit {
     if (this.answer !== '') {
       this.loginservice.check_same_answer(this.answer).subscribe(
         data => {
-          console.log(data);
+          // console.log(data);
           let i = 0;
           for (i; i < data.length; i++) {
             if (this.loginservice.getUser().index !== data[i].index_no) {
