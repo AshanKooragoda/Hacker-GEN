@@ -19,6 +19,7 @@ import { HomePageOfAllComponent } from './components/home-page-of-all/home-page-
 import { ViewInputsComponent } from './components/view-inputs/view-inputs.component';
 import { MyDetailComponent } from './components/my-detail/my-detail.component';
 import { AnswersComponent } from './components/answers/answers.component';
+import { TestTestingComponent } from './test-testing/test-testing.component';
 
 
 const appRoutes: Routes = [
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     HomePageOfAllComponent,
     ViewInputsComponent,
     MyDetailComponent,
-    AnswersComponent
+    AnswersComponent,
+    TestTestingComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
